@@ -1,0 +1,1 @@
+Linux Setting and else
