@@ -56,7 +56,10 @@ cfclient
 
 #Make sure that the Crazyflie is disconnected from the client and powered off
 
-#Go to the menu connect→Bootloader
+#start crazyflie client
+cfclient
+
+#Go to the 상단 menu, connect→Bootloader
 
 #For Crazyflie 2.0 hold the button for about 3 seconds when turning it on until the blue LED M2 starts to blink to get into bootloader mode. If a wrong nRF51 firmware has been flashed you might have to start from an un-powered state. Then hold the button and connect power.
 
