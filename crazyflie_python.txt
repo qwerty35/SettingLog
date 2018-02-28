@@ -2,49 +2,36 @@ Environment: Ubuntu 14.04
 
 1. Install cflib
 
-(If there is no pip)
+#If there is no pip
 sudo apt-get install python-pip
 
 git clone https://github.com/bitcraze/crazyflie-lib-python.git
 
 sudo pip install -e <path/to>/crazyflie-lib-python/ 
 
-
-[ 이 괄호 부분은 왜 하는지 모르겠음
-pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-(이거 하면 terminal 에서 (venv)라고 옆에 붙음)]
-
 cd <path/to>/crazyflie-lib-python/ 
 
 pip install -r requirements.txt
 
-(Setting udev permissions for crazy radio)
+#Setting udev permissions for crazy radio
 
 sudo groupadd plugdev
 sudo usermod -a -G plugdev <user name> (e.g. jungwon)
 sudo gedit /etc/udev/rules.d/99-crazyradio.rules  
 
-add the following:
+#add the following:
 SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="7777", MODE="0664", GROUP="plugdev"
 
-To connect Crazyflie 2.0 via usb
+#To connect Crazyflie 2.0 via usb
 
 sudo gedit /etc/udev/rules.d/99-crazyflie.rules 
 
-and add the following:
+#and add the following:
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0664", GROUP="plugdev"
 
 2. Execute python script
 
-//[source venv/bin/activate]
-
 python <script that you want> (e.g. python examples/basiclog)
-
-//[deactivate]
-
-(activate 하면 오히려 안됨 괄호부분 생략하고 그냥 스크립트 실행할 것)
 
 
 3. Install Crazyflie PC client
@@ -59,8 +46,29 @@ pip3 install -e .
 
 4. Execute Crazyflie PC client
 
+#At terminal just type
+
 cfclient
 
 
 
-5.
+5. Firmware upgrade
+
+#Make sure that the Crazyflie is disconnected from the client and powered off
+
+#Go to the menu connect→Bootloader
+
+#For Crazyflie 2.0 hold the button for about 3 seconds when turning it on until the blue LED M2 starts to blink to get into bootloader mode. If a wrong nRF51 firmware has been flashed you might have to start from an un-powered state. Then hold the button and connect power.
+
+#Click “Initiate bootloader cold boot”
+
+#At https://github.com/bitcraze/crazyflie-release/releases 
+get zip file named crazyflie-2018.01.zip
+
+#Press “Browse” and select select a zip file containing firmware for both nRF51 and STM32F405 for Crazyflie 2.0 as well as firmware for the STM32F103 for the Crazyflie 1.0.
+
+#Press “Program” and wait
+
+#Press “Restart in firmware mode”
+
+
