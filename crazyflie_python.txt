@@ -33,6 +33,8 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0664"
 
 python <script that you want> (e.g. python examples/basiclog)
 
+#kalman 같은 기능은 아래 5.firmware 설치해야 쓸 수 있음. 
+
 
 3. Install Crazyflie PC client
 
