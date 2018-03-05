@@ -1,0 +1,32 @@
+1. Nvidia graphic driver install
+
+sudo-add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-390 (GTX1050)
+sudo reboot
+
+install check: nvidia-smi
+
+source:
+http://igotit.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-nvidia-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98
+
+2. Linux Kore/Eng change key
+
+goto language support → update language pack
+goto Text entry setting → change key
+
+3. ROS install
+
+http://cafe.naver.com/openrt/5413
+
+4. Qtcreator 자꾸 cannot overwrite file (중략) Permission denied 뜰 때
+
+sudo chown -R username /home/usrname/.config/QtProject/
+
+
+5. mac book ubuntu dual booting setting
+
+for wifi download 
+
+https://packages.ubuntu.com/trusty/amd64/bcmwl-kernel-source/download
+https://packages.ubuntu.com/trusty/all/dkms/download
