@@ -1,0 +1,55 @@
+Environment: Ubuntu 14.04, ROS indigo
+
+
+0. install ROS
+
+see Linux_setting file
+
+
+1. assembly crazyfile instructions
+
+https://wiki.bitcraze.io/projects:crazyflie2:userguide:assembly
+
+
+2. install crazyflie_ros
+
+you have to install ros before install it
+
+cd ~/catkin_ws/src (or go to catkin ws src folder)
+git clone https://github.com/whoenig/crazyflie_ros.git
+cd ~/catkin_ws (or at your src folder)
+catkin_make
+
+
+3.Setting udev permissions (for crazy radio)
+
+sudo groupadd plugdev
+sudo usermod -a -G plugdev <user name> (e.g. jungwon)
+sudo gedit /etc/udev/rules.d/99-crazyradio.rules  
+
+add the following:
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="7777", MODE="0664", GROUP="plugdev"
+
+To connect Crazyflie 2.0 via usb
+
+sudo gedit /etc/udev/rules.d/99-crazyflie.rules 
+
+and add the following:
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0664", GROUP="plugdev"
+
+
+4. scan crazyflie 2.0 
+
+rosrun crazyflie_tools scan
+
+result : //0/80/250K (in my case)
+
+
+5.Demo
+
+roslaunch crazyflie_demo teleop_xbox360.launch uri:=radio:<your scan result>
+
+(e.g. roslaunch crazyflie_demo teleop_xbox360.launch uri:=radio://0/80/250K) 
+
+
+

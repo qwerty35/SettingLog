@@ -24,9 +24,8 @@ http://cafe.naver.com/openrt/5413
 sudo chown -R username /home/usrname/.config/QtProject/
 
 
-5. mac book ubuntu dual booting setting
+5. mac(e.g. macbook air) ubuntu dual booting setting
 
-for wifi download 
+for wifi driver restore 
 
-https://packages.ubuntu.com/trusty/amd64/bcmwl-kernel-source/download
-https://packages.ubuntu.com/trusty/all/dkms/download
+https://itsfoss.com/fix-no-wireless-network-ubuntu/
