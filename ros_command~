@@ -1,0 +1,7 @@
+node info -> graph
+
+rosrun rqt_graph rqt_graph 
+
+rostopic list,info
+
+rosnode list,info

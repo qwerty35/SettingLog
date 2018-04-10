@@ -29,3 +29,7 @@ sudo chown -R username /home/usrname/.config/QtProject/
 for wifi driver restore 
 
 https://itsfoss.com/fix-no-wireless-network-ubuntu/
+
+6. Permission denied (publickey). git push error
+
+http://uiandwe.tistory.com/992
