@@ -1,6 +1,6 @@
 1. Nvidia graphic driver install
 
-sudo-add-apt-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
 sudo apt-get install nvidia-390 (GTX1050)
 sudo reboot
