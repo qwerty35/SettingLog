@@ -5,3 +5,5 @@ rosrun rqt_graph rqt_graph
 rostopic list,info
 
 rosnode list,info
+
+rostopic echo /ground_truth_pose
