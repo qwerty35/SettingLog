@@ -1,0 +1,50 @@
+Ubuntu 18.04 settinglog
+
+1.graphic card
+
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-390 (GTX1050)
+sudo reboot
+
+2. Terminator
+sudo apt-get install terminator
+sudo mkdir ~/.config/terminator
+sudo gedit ~/.config/terminator/config
+copy below config!
+
+[global_config]
+  focus = system
+  handle_size = 1
+  tab_position = bottom
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      size = 1000, 600
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_darkness = 0.8
+    background_image = None
+    font = Ubuntu Mono 12
+    foreground_color = "#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    visible_bell = True
+
+3. ros melodic
+http://wiki.ros.org/melodic/Installation/Ubuntu
+http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+
+4. git
+
+
+
