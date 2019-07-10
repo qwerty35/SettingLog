@@ -1,0 +1,24 @@
+1. Environment
+ubuntu 18.04, melodic
+
+2. Prerequisite
+1) octomap, dynamicEDT3D
+sudo apt-get install ros-melodic-octomap*
+sudo apt-get install ros-melodic-dynamic-edt-3d
+
+2) cplex
+install cplex129 at /opt/ibm/ILOG/CPLEX_Studio129/cplex/bin/x86-64_linux (default dir)
+gedit ~/.bashrc
+export PATH=$PATH:/opt/ibm/ILOG/CPLEX_Studio129/cplex/bin/x86-64_linux
+
+3. Install
+cd ~/catkin_ws/src
+git clone --recurse-submodules https://github.com/qwerty35/swarm_simulator.git
+cd ~/catkin_ws/src/swarm_simulator/swarm_planner/third_party/AA-SIPP-m
+cmake .
+make
+
+cd ~/catkin_ws && catkin_make
+
+4. Run sample code
+roslaunch swarm_planner plan_random_forest_64agents.launch
