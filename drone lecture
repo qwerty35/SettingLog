@@ -1,0 +1,24 @@
+px4는 fusion된거로 자기 위치 알아듣는데
+fusion 안된 vision_pose로 initialize 하면 제어 터져서 안됨.
+
+1. ifconfig로 연결확인, ping ip 으로 양방향 통신 체크할 것
+2. 순서대로 실행
+connect_nuc
+ 
+nuc : roscore
+nuc : roslaunch mavros px4.launch
+
+connect_jetson
+jetson pose estimator : roslaunch zed_wrapper zed.launch
+
+nuc : roslaunch px4_code run_mav_wrapper (hardware 실험시) <-이거 해야  /mavros/local_position/pose가 나옴
+
+rostopic echo /mavros/local_position/pose 로 pose 확인
+
+
+3.실험
+반드시 px4전원 들어온 상태에서 모터 배터리 연결할 것!
+다 연결하고 kill switch 부터 확인 QGC로
+
+
+
