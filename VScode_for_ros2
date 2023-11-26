@@ -1,0 +1,89 @@
+1. Install extention
+C/C++
+CMake
+CMake Tools
+Python
+ROS
+YAML
+
+2. go to ~/ros2_ws/src/${your_package}/.vscode/c_cpp_properties.json
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ibm/ILOG/CPLEX_Studio2211",
+        "/home/jungwon/ros2_ws/install/acr_bvc/include/**",
+        "/home/jungwon/ros2_ws/install/acr_bvc_interfaces/include/**",
+        "/opt/ros/iron/include/**",
+        "/home/jungwon/ros2_ws/src/acr_bvc/include/**",
+        "/home/jungwon/ros2_ws/src/acr_bvc_interfaces/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
+
+3. go to ~/ros2_ws/src/${your_package}/.vscode/setting.json
+
+{
+    "python.autoComplete.extraPaths": [
+        "/home/jungwon/ros2_ws/install/motion_capture_tracking_interfaces/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_sim/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_examples/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/build/crazyflie_py",
+        "/home/jungwon/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_interfaces/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/acr_bvc_interfaces/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/jungwon/ros2_ws/install/motion_capture_tracking_interfaces/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_sim/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_examples/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/build/crazyflie_py",
+        "/home/jungwon/ros2_ws/install/crazyflie_py/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/crazyflie_interfaces/lib/python3.10/site-packages",
+        "/home/jungwon/ros2_ws/install/acr_bvc_interfaces/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+
+    "ros.distro": "iron",
+    "colcon.provideTasks": true,
+    "files.associations": {
+    "*.repos": "yaml",
+    "*.world": "xml",
+    "*.xacro": "xml"
+    }   
+}
+
+4. go to ~/ros2_ws/src/${your_package}/.vscode/launch.json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: Launch",
+            "request": "launch",
+            "target": "/home/jungwon/ros2_ws/install/acr_bvc/share/acr_bvc/launch/simple_simulation_launch.py",
+            "launch": [
+                "rviz",
+                "gz",
+                "gzclient",
+                "gzserver"
+            ],
+            "type": "ros"
+        }
+    ]
+}
