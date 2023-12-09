@@ -55,5 +55,6 @@ gedit ~/.bashrc
 4. h.264
 sudo apt-get install ubuntu-restricted-extras
 
-
+5. Korean 
+setting -> Keyboard -> input source -> korean(hangul)
 
